@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Ajax GET Demo</title>
+<script>
+function getPostById(id) {
+    // Creating the XMLHttpRequest object
+    var request = new XMLHttpRequest();
+ 
+    // Instantiating the request object
+    request.open("GET", "https://jsonplaceholder.typicode.com/posts/" + id);
+ 
+    // Defining event listener for readystatechange event
+    request.onreadystatechange = function() {
+        // Check if the request is compete and was successful
+        if(this.readyState === 4 && this.status === 200) {
+            // Inserting the response from server into an HTML element
+            let jsonData = this.responseText;
+            let obj = JSON.parse(jsonData);
+            document.getElementById("response_postid").innerHTML = obj.id;
+            document.getElementById("response_title").innerHTML = obj.title;
+            document.getElementById("response_body").innerHTML = obj.body;
+        }
+    };
+ 
+    // Sending the request to the server
+    request.send();
+}
+</script>
+</head>
+<body>
+    Post Id: <input type="text" id="postId" value="1">
+    <button type="button" onclick="getPostById(document.getElementById('postId').value)">Get Post detail</button>
+    <div>
+        <p id="response_postid">Title = ?</p>
+    </div>
+    <div>
+        <p id="response_title">Title = ?</p>
+    </div>
+    <div>
+        <p id="response_body">Body = ?</p>
+    </div>
+</body>
+</html>
