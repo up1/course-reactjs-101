@@ -1,23 +1,32 @@
-import './App.css'
 import { useState, useRef } from 'react'
 import Welcome from './Welcome'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function App() {
   const [myName, setMyName] = useState('???') // React Hooks
   const nameRef = useRef(null)
 
-  function xxxx() {
-    setMyName(nameRef.current.value)
+  function handleClick(e) {
+    setMyName(e.target.value)
   }
-  
+
   return (
     <>
+      <Box
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField id="outlined-basic" label="Your name" variant="outlined" onChange={handleClick} />
+        <Button variant="outlined" >Chage</Button>
+      </Box>
       <p>
-        Name :: <input type='text' ref={nameRef} />
-        <button onClick={xxxx}>Change</button>
-      </p>
-      <p>
-        <Welcome name={myName}/>
+        <Welcome name={myName} />
       </p>
     </>
   )
