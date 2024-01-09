@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 
 function App() {
   const [myName, setMyName] = useState('???') // React Hooks
-  const nameRef = useRef(null)
 
   function handleClick(e) {
     setMyName(e.target.value)
