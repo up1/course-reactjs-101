@@ -12,7 +12,7 @@ Welcome.propTypes = {
 function Welcome(props) {
     return (
         <>
-            Hello <span>{props.name}</span>
+           <p id="result">Hello <span>{props.name}</span></p> 
         </>
     );
 }
