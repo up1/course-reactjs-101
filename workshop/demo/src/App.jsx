@@ -1,4 +1,5 @@
 import './App.css'
+import ContentContainer from './ContentContainer'
 
 function App() {
   
@@ -6,7 +7,8 @@ function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <h1>App</h1>
+      <ContentContainer/>
     </>
   )
 }
