@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react'
+import Welcome from './Welcome'
 
 function App() {
   const [myName, setMyName] = useState('???') // React Hooks
@@ -13,7 +14,7 @@ function App() {
         Name :: <input type='text' id="username_tf" onChange={xxxx} />
       </p>
       <p>
-        Hello <span>{myName}</span>
+        <Welcome name={myName} />
       </p>
     </>
   )
