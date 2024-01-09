@@ -15,6 +15,9 @@ function App() {
       .then((res) => {
         setUsers(res.data)
       })
+      .catch((err) => {
+        console.log(err)
+      })
   }, [])
 
   function handleClick(e) {
