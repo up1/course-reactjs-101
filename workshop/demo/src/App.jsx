@@ -1,20 +1,23 @@
 import './App.css'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Welcome from './Welcome'
 
 function App() {
   const [myName, setMyName] = useState('???') // React Hooks
-  function xxxx(event) {
-    setMyName(event.target.value)
+  const nameRef = useRef(null)
+
+  function xxxx() {
+    setMyName(nameRef.current.value)
   }
   
   return (
     <>
       <p>
-        Name :: <input type='text' id="username_tf" onChange={xxxx} />
+        Name :: <input type='text' ref={nameRef} />
+        <button onClick={xxxx}>Change</button>
       </p>
       <p>
-        <Welcome name={myName} />
+        <Welcome name={myName}/>
       </p>
     </>
   )
