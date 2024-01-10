@@ -1,10 +1,12 @@
-import { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useDemo } from '../hooks/useDemo.js';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { sayHi } from '../redux/demoSlice';
+import { useState } from 'react';
 
+// Create props interface
+PropTypes.propTypes = {
+  callback: PropTypes.func.isRequired
+};
 const SearchBox = (props) => {
   const [postId, setPostId] = useState(0)
 

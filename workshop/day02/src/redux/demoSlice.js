@@ -6,7 +6,7 @@ const demoSlice = createSlice({
     value: 'Hello from context!',
   },
   reducers: {
-    sayHi: (state) => {
+    sayHi: () => {
       console.log('Hi from DemoContextProvider');
       localStorage.setItem('demo_data_redux', JSON.stringify({ msg: 'Hello from context!' }));
       sessionStorage.setItem('demo_data_redux', JSON.stringify({ msg: 'Hello from context!' }));
