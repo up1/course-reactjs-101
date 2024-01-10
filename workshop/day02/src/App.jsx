@@ -5,6 +5,7 @@ import axios from "axios"
 
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { NavBar } from "./components/NavBar";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   return (
     <>
       <Provider store={store}>
+        <NavBar />
         <SearchBox callback={handleSearch} />
         <PostDetail post={post} />
       </Provider>
