@@ -2,6 +2,7 @@ import { useState } from "react"
 import SearchBox from "./components/SearchBox"
 import PostDetail from "./components/PostDetail"
 import axios from "axios"
+import DemoContextProvider from "./DemoContextProvider"
 
 function App() {
   const [post, setPost] = useState({ id: 0, title: "-", body: "-" })
@@ -19,8 +20,10 @@ function App() {
 
   return (
     <>
-      <SearchBox callback={handleSearch} />
-      <PostDetail post={post} />
+      <DemoContextProvider>
+        <SearchBox callback={handleSearch} />
+        <PostDetail post={post} />
+      </DemoContextProvider>
     </>
   )
 }

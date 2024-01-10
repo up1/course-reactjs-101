@@ -8,6 +8,7 @@ const SearchBox = (props) => {
     console.log("value", value)
 
     function xyz() {
+      value.sayHi()
       props.callback(postId)
     }
 
