@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+import DemoContext from '../DemoContext.js'
 
 const SearchBox = (props) => {
     const [postId, setPostId] = useState(0) 
+    const value = useContext(DemoContext)
+    console.log("value", value)
 
     function xyz() {
       props.callback(postId)

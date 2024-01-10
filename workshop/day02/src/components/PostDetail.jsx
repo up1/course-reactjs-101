@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import DemoContext from '../DemoContext';
 
 const PostDetail = (props) => {
+  const value = useContext(DemoContext)
+  console.log("PostDetail value", value)
+
   return (
     <div>
       <p>Id: {props.post.id} </p>
