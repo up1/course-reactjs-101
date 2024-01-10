@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
-import DemoContext from '../DemoContext';
+import { useDemo } from '../hooks/useDemo';
 
 const PostDetail = (props) => {
-  const value = useContext(DemoContext)
+  const value = useDemo()
   console.log("PostDetail value", value)
 
   return (
