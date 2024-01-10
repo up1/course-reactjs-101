@@ -8,6 +8,8 @@ const DemoContextProvider = ({ children }) => {
 
   function sayHi() {
     console.log("Hi from DemoContextProvider")
+    // TODO :: write data to locatstorage vs session storage vs cookie secure
+    localStorage.setItem("demo_data", JSON.stringify({msg: "Hello from context!"}))
   }
 
   return (
