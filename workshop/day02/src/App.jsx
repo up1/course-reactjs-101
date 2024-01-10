@@ -1,15 +1,20 @@
 import { useState } from "react"
 import SearchBox from "./components/SearchBox"
 import PostDetail from "./components/PostDetail"
+import axios from "axios"
 
 function App() {
   const [post, setPost] = useState({ id: 0, title: "-", body: "-" })
 
   function handleSearch(postId) {
     console.log("handleSearch ...", postId)
-    // TODO 1: Call api to get post detail
-    // Call api = https://jsonplaceholder.typicode.com/posts/1
-    // TODO 2: Update post state
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+      .then((res) => {
+        setPost(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   return (
