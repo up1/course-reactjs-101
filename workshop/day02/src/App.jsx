@@ -4,6 +4,9 @@ import PostDetail from "./components/PostDetail"
 import axios from "axios"
 import DemoContextProvider from "./DemoContextProvider"
 
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 function App() {
   const [post, setPost] = useState({ id: 0, title: "-", body: "-" })
 
@@ -18,12 +21,13 @@ function App() {
       })
   }
 
+
   return (
     <>
-      <DemoContextProvider>
+      <Provider store={store}>
         <SearchBox callback={handleSearch} />
         <PostDetail post={post} />
-      </DemoContextProvider>
+      </Provider>
     </>
   )
 }

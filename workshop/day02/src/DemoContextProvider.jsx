@@ -1,6 +1,7 @@
 import DemoContext from "./DemoContext";
 
 const DemoContextProvider = ({ children }) => {
+  console.log("DemoContextProvider")
   const demoContextValue = {
     value: "Hello from context!",
     sayHi: sayHi
