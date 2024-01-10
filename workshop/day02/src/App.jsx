@@ -2,12 +2,13 @@ import { useState } from "react"
 import SearchBox from "./components/SearchBox"
 import PostDetail from "./components/PostDetail"
 import axios from "axios"
-import DemoContextProvider from "./DemoContextProvider"
 
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+
 function App() {
+  console.log("App ...")
   const [post, setPost] = useState({ id: 0, title: "-", body: "-" })
 
   function handleSearch(postId) {
